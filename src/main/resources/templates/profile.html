@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" th:href="@{/profile.css}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/products">Home</a>
+        <a href="/sell">Sell</a>
+        <a href="/cart">Cart</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout1">Logout</a>
+    </nav>
+
+    <div class="profile-container">
+        <h1>Profile</h1>
+        <p><strong>Email:</strong> <span th:text="${email}">[User Email]</span></p>
+        <p><strong>Password:</strong> <span class="password-field" th:text="${password}">[User Password]</span></p>
+        <p><strong>Account Created:</strong> <span th:text="${#dates.format(createdAt, 'yyyy-MM-dd hh:mm:ss a')}">[Account Creation Date]</span>
+         </p>
+         
+    </div>
+    
+</body>
+</html>

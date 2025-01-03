@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white; /* Optional: Set the default text color to white for better readability */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #87ceeb;
+    font-weight: bold; /* Ensure bold consistency */
+    margin-bottom: 20px;
+}
+
+
+/* PRODUCT CATALOG - Top Middle */
+.top-middle {
+    position: relative;
+    margin-top: 75px;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: #87ceeb;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+}
+
+/* Search Section - Centered and Enlarged */
+.search-section {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between elements */
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* Space between inputs */
+    justify-content: center;
+    align-items: flex-start; /* Align vertically at the top */
+}
+
+.vertical-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between Min Price and Search button */
+}
+
+.search-input, .price-input {
+    padding: 12px;
+    font-size: 1.2rem;
+    width: 200px;
+    border: 2px solid #87ceeb;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+
+.search-btn {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #87ceeb;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #87ceeb;
+}
+
+
+/* Available Products Section */
+.product-list {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Add space between items */
+    padding: 0 20px; /* Optional: Add some padding */
+}
+
+.product-item {
+    background-color: #111; /* Optional: Background for better visual separation */
+    border: 1px solid #87ceeb; /* Optional: Border for distinction */
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px; /* Fixed width for uniform appearance */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    text-align: left; /* Align text to the left */
+}
+.product-item p {
+    word-wrap: break-word; /* Break words when they exceed the container width */
+    word-break: break-word; /* Break words for long strings */
+    overflow-wrap: break-word; /* Ensure compatibility with all browsers */
+    white-space: normal; /* Allow text to wrap onto the next line */
+    max-width: 100%; /* Ensure it stays within the container */
+}
+
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 10px 0;
+    border: 1px solid #87ceeb;
+    border-radius: 5px;
+    width: 250px; /* Fixed width for the container */
+    height: 250px; /* Fixed height for the container */
+    background-color: #000; /* Optional: Background color for the container */
+    box-sizing: border-box;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ensures the entire image is visible without cropping */
+    border-radius: 5px; /* Match the container's rounded corners */
+    background-color: #000; /* Optional: Background color behind images */
+}
+
+
+.product-list h2 {
+    font-size: 1.8rem;
+    color: #87ceeb;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Product Items */
+.product-list ul {
+    list-style: none;
+}
+
+/* Available Products Section */
+.product-list {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Add space between items */
+    padding: 0 20px; /* Optional: Add some padding */
+}
+
+/* Adjust width to allow 6 items per row */
+.product-item {
+    background-color: #111; /* Optional: Background for better visual separation */
+    border: 1px solid #87ceeb; /* Optional: Border for distinction */
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(16.66% - 20px); /* 6 items per row with gaps */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px; /* Optional: Add margin at the bottom */
+}
+
+
+/* No Products Found Message */
+.no-products {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2rem;
+    color: red;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #87ceeb; /* Sky Blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #1e90ff; /* Darker Blue on hover */
+}
+
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    background-color: #000; /* Black background */
+    padding: 1em;
+    position: fixed; /* Keep navbar at the top */
+    top: 0; /* Position at the very top */
+    right: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure navbar is on top */
+    font-family: 'Roboto', sans-serif; /* Consistent font */
+    font-size: 1rem; /* Consistent font size */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff; /* White text */
+    font-weight: bold; /* Set to bold (700) */
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Consistent font */
+    font-size: 1rem; /* Consistent font size */
+}
+
+.navbar a:hover {
+    background-color: #1e90ff; /* Sky Blue */
+    color: #000; /* Black text */
+}

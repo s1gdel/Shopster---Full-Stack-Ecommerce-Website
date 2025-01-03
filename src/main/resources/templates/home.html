@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopster - Product Catalog</title>
+    <link rel="stylesheet" th:href="@{/products.css}">
+</head>
+<body class="black-background">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="products">Home</a>
+        <a href="sell">Sell</a>
+        <a href="/cart">Cart</a>
+        <a href="/profile">Profile</a>
+        <a href="/logout1">Logout</a>
+    </nav>
+
+    <!-- Website Header -->
+    <header>
+        <div class="top-middle">PRODUCT CATALOG</div>
+    </header>
+
+<!-- Search and Filter Section -->
+<div class="search-section">
+    <form action="/products" method="get">
+        <div class="input-group">
+            <input class="search-input" type="text" name="search" placeholder="Search"
+                   th:value="${param.search}" />
+            <div class="vertical-group">
+                <input class="price-input" type="number" name="minPrice" placeholder="Min Price" step="0.01"
+                       th:value="${param.minPrice}" />
+                <button class="search-btn" type="submit">Search</button>
+            </div>
+            <input class="price-input" type="number" name="maxPrice" placeholder="Max Price" step="0.01"
+                   th:value="${param.maxPrice}" />
+        </div>
+    </form>
+</div>
+
+
+
+
+    <!-- Product Display Section -->
+    <div class="product-list">
+    <div th:each="product : ${products}" class="product-item">
+        <h2 th:text="${product.name}">Product Name</h2>
+        <p th:text="${product.description}">Product Description</p>
+        <p th:text="'$' + ${product.price}">Price</p>
+
+        <div th:each="imagePath : ${product.imagePaths}" class="product-image">
+            <img th:src="@{'/uploads/' + ${imagePath}}" alt="Product Image">
+        </div>
+
+        <form action="/cart/add" method="post">
+            <input type="hidden" name="productId" th:value="${product.id}" />
+            <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+    
+</body>
+</html>

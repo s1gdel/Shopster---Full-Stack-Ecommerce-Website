@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Your Cart</title>
+   <link rel="stylesheet" th:href="@{/cart.css}">
+</head>
+<body>
+   <nav class="navbar">
+       <a href="/products">Home</a>
+       <a href="/sell">Sell</a>
+       <a href="/cart">Cart</a>
+       <a href="/profile">Profile</a>
+       <a href="/logout1">Logout</a>
+   </nav>
+
+
+   <header>
+       <h1>Your Cart</h1>
+   </header>
+
+
+   <main>
+       <div th:if="${cartItems != null and !#lists.isEmpty(cartItems)}">
+        <ul>
+            <li th:each="item : ${cartItems}" class="cart-item">
+                <!-- Display the product image -->
+                <img th:src="@{/uploads/{imagePath}(imagePath=${item.product.imagePaths[0]})}" alt="Product Image" class="cart-item-image">
+                
+                <!-- Display other product details -->
+                <div class="cart-item-details">
+                    <h3 th:text="${item.product.name}"></h3>
+                    <p th:text="${item.product.description}"></p>
+                </div>
+                
+                <!-- Price and Quantity -->
+                <div class="cart-item-price">
+                    <p>Price: $<span th:text="${item.product.price}"></span></p>
+                    <p>Quantity: <span th:text="${item.quantity}"></span></p>
+                </div>
+            </li>
+        </ul>             
+           <p>Total Price: $<span th:text="${totalPrice}"></span></p>
+           <form action="/cart/buy" method="post">
+               <button type="submit" class="buy-now-btn">Buy Now</button>
+           </form>
+       </div>
+       <div th:if="${cartItems == null or #lists.isEmpty(cartItems)}">
+           <p>Your cart is empty.</p>
+       </div>
+   </main>
+</body>
+</html>
