@@ -4,7 +4,7 @@ Shopster
 
 Overview
 --------
-Shopster is a Spring-based web application offering user authentication, product listing and selling, cart functionality, payment integration using Stripe, and a password reset feature. It is designed to provide a streamlined user experience for buying and selling products online.
+Shopster is a Spring-based web application emulating an e-commerce website offering user authentication, product listing and selling, cart functionality and payment integration using Stripe. It is designed to provide a streamlined user experience for buying and selling products online.
 
 Features
 --------
@@ -21,13 +21,11 @@ Features
    - Add items to a cart.
    - Checkout and payment processing using Stripe integration.
    - Success and cancellation pages for payment flows.
+4. **Buying Products Using Stripe**
+   - Securely purchase products using Stripe's test mode.
+   - Automatically clear the cart upon successful purchase.
+   - Notify users of transaction success or failure.
 
-4. **Password Reset**
-   - Password reset via email with a time-bound reset token.
-
-5. **Admin and Utility Functions**
-   - Serve uploaded images dynamically.
-   - Clear cart after successful payment.
 
 Installation
 ------------
@@ -38,35 +36,6 @@ Installation
 - PostgreSQL (or another compatible database)
 - A valid Stripe API key
 - SMTP server details for email functionality
-
-# Setup Instructions
-1. **Clone the Repository**
-   ```
-   git clone https://github.com/username/lockedin-myapp.git
-   cd lockedin-myapp
-   ```
-
-2. **Configure Environment Variables**
-   Create an `application.properties` file under `src/main/resources` with the following content:
-   ```
-   spring.datasource.url=jdbc:postgresql://localhost:5432/myapp
-   spring.datasource.username=your_db_username
-   spring.datasource.password=your_db_password
-   stripe.api.key=your_stripe_api_key
-   spring.mail.host=smtp.your-email.com
-   spring.mail.port=587
-   spring.mail.username=your_email@example.com
-   spring.mail.password=your_email_password
-   ```
-
-3. **Build and Run the Application**
-   ```
-   mvn clean install
-   mvn spring-boot:run
-   ```
-
-4. **Access the Application**
-   Open a browser and navigate to `http://localhost:8080`.
 
 Usage
 -----
