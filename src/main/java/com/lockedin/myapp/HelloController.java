@@ -134,7 +134,7 @@ public String processLogin(@RequestParam String email,
         if (!isAuthenticated(model)) return "custom-login";
 
         try {
-            String uploadDir = "C:\\Users\\subha\\OneDrive\\Desktop\\website\\uploads";
+            String uploadDir = "UPLOAD DIRECTORY HERE";
             File uploadPath = new File(uploadDir);
             if (!uploadPath.exists()) {
                 uploadPath.mkdirs();
